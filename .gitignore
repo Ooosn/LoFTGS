@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+runs/
+outputs/
+*.log
+events.out.tfevents.*
+*.pth
+*.ply
