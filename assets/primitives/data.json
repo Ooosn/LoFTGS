@@ -1,0 +1,1130 @@
+[
+  {
+    "id": "lego",
+    "name": "Lego",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/lego-gs3.bin.gz",
+        "count": 304406,
+        "material": "assets/primitives/lego-gs3-material.png",
+        "materialSize": [
+          2048,
+          149
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/lego-ours.bin.gz",
+        "count": 225202,
+        "material": "assets/primitives/lego-ours-material.png",
+        "materialSize": [
+          2048,
+          1760
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 529194,
+        "displayedCount": 304406,
+        "medianScale": 0.003568163374438882,
+        "scaleQuartiles": [
+          0.0017933921189978719,
+          0.003568163374438882,
+          0.00613212410826236
+        ],
+        "medianScalePercent": 0.20808619156065344,
+        "meanScale": 0.0046667049599999465,
+        "meanScalePercent": 0.2721503362822642,
+        "psnr": 31.02
+      },
+      "Ours": {
+        "count": 320176,
+        "displayedCount": 225202,
+        "medianScale": 0.00587000189163815,
+        "scaleQuartiles": [
+          0.004595130389216735,
+          0.00587000189163815,
+          0.008152916334656516
+        ],
+        "medianScalePercent": 0.34232354573083357,
+        "meanScale": 0.0073112087275014935,
+        "meanScalePercent": 0.4263710542822445,
+        "psnr": 31.4
+      }
+    },
+    "camera": {
+      "position": [
+        2.9540433374177577,
+        5.1051459409958415,
+        5.417642335781289
+      ],
+      "target": [
+        0.12653525511250452,
+        0.20648712725244334,
+        -0.24194082570982633
+      ],
+      "up": [
+        -0.35377171635627747,
+        -0.6124964952468872,
+        0.7068900465965271
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -0.96443630855628,
+        -1.75,
+        -1.0406047969847008
+      ],
+      [
+        0.96443630855628,
+        1.75,
+        1.0406047969847008
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0.20239288667414265,
+        0.7345455107981622,
+        0.5160105443392269
+      ],
+      "distance": 0.9
+    }
+  },
+  {
+    "id": "anisometal",
+    "name": "AnisoMetal",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/anisometal-gs3.bin.gz",
+        "count": 267713,
+        "material": "assets/primitives/anisometal-gs3-material.png",
+        "materialSize": [
+          2048,
+          131
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/anisometal-ours.bin.gz",
+        "count": 182459,
+        "material": "assets/primitives/anisometal-ours-material.png",
+        "materialSize": [
+          2048,
+          1426
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 549522,
+        "displayedCount": 267713,
+        "medianScale": 0.004992692731320858,
+        "scaleQuartiles": [
+          0.0018067595374304801,
+          0.004992692731320858,
+          0.008575399639084935
+        ],
+        "medianScalePercent": 0.2911611120543184,
+        "meanScale": 0.006093472769045456,
+        "meanScalePercent": 0.3553557975995465,
+        "psnr": 27.53
+      },
+      "Ours": {
+        "count": 328161,
+        "displayedCount": 182459,
+        "medianScale": 0.007234258247584775,
+        "scaleQuartiles": [
+          0.005189698010134746,
+          0.007234258247584775,
+          0.010490116554763175
+        ],
+        "medianScalePercent": 0.42188349846589884,
+        "meanScale": 0.008779511611366878,
+        "meanScalePercent": 0.511998735276285,
+        "psnr": 28.84
+      }
+    },
+    "camera": {
+      "position": [
+        -1.475052219305998,
+        5.764535141248153,
+        5.502925972708331
+      ],
+      "target": [
+        0.008263677458793639,
+        0.03418346616258283,
+        -0.033166635041252945
+      ],
+      "up": [
+        0.18295510113239288,
+        0.707169234752655,
+        -0.6829633712768555
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.75,
+        -0.8561508029825268,
+        -1.749747349183695
+      ],
+      [
+        1.75,
+        0.8561508029825268,
+        1.749747349183695
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        -0.4571177730522673,
+        0.7394928865184272,
+        0.7043739794745243
+      ],
+      "distance": 1.35
+    }
+  },
+  {
+    "id": "fish",
+    "name": "Fish",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/fish-gs3.bin.gz",
+        "count": 151274,
+        "material": "assets/primitives/fish-gs3-material.png",
+        "materialSize": [
+          2048,
+          74
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/fish-ours.bin.gz",
+        "count": 91567,
+        "material": "assets/primitives/fish-ours-material.png",
+        "materialSize": [
+          2048,
+          716
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 279564,
+        "displayedCount": 151274,
+        "medianScale": 0.00243696803227067,
+        "scaleQuartiles": [
+          0.00048377978964708745,
+          0.002436967915855348,
+          0.008052678080275655
+        ],
+        "medianScalePercent": 0.14211776299901294,
+        "meanScale": 0.0073074170888730305,
+        "meanScalePercent": 0.42614993558358194,
+        "psnr": 31.11
+      },
+      "Ours": {
+        "count": 138958,
+        "displayedCount": 91567,
+        "medianScale": 0.008429475020199185,
+        "scaleQuartiles": [
+          0.005413839916299182,
+          0.008429475020199185,
+          0.015020381281412972
+        ],
+        "medianScalePercent": 0.4915854936392166,
+        "meanScale": 0.013898324940205814,
+        "meanScalePercent": 0.8105148790544572,
+        "psnr": 31.29
+      }
+    },
+    "camera": {
+      "position": [
+        -21.024119663175078,
+        9.797301816294045,
+        -11.603053271931183
+      ],
+      "target": [
+        -0.05443189552307359,
+        0.34403002344426525,
+        0.3670496670257446
+      ],
+      "up": [
+        0.2650057077407837,
+        0.9264305233955383,
+        0.26739224791526794
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.7380871210544282,
+        -0.8529545964572536,
+        -1.75
+      ],
+      [
+        1.7380871210544282,
+        0.8529545964572536,
+        1.75
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        -0.3186274994600629,
+        0.20788967382123189,
+        -0.33900489147281515
+      ],
+      "distance": 1.6
+    }
+  },
+  {
+    "id": "cat",
+    "name": "Cat",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/cat-gs3.bin.gz",
+        "count": 74375,
+        "material": "assets/primitives/cat-gs3-material.png",
+        "materialSize": [
+          2048,
+          37
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/cat-ours.bin.gz",
+        "count": 63217,
+        "material": "assets/primitives/cat-ours-material.png",
+        "materialSize": [
+          2048,
+          494
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 148347,
+        "displayedCount": 74375,
+        "medianScale": 0.003928593825548887,
+        "scaleQuartiles": [
+          0.002065490116365254,
+          0.003928593825548887,
+          0.007323916535824537
+        ],
+        "medianScalePercent": 0.2291055766121475,
+        "meanScale": 0.006510379968693078,
+        "meanScalePercent": 0.3796687626477159,
+        "psnr": 27.69
+      },
+      "Ours": {
+        "count": 104222,
+        "displayedCount": 63217,
+        "medianScale": 0.005186148723143374,
+        "scaleQuartiles": [
+          0.0034202578273811713,
+          0.005186148723143374,
+          0.008800303962541514
+        ],
+        "medianScalePercent": 0.30244297231366446,
+        "meanScale": 0.007790642853656572,
+        "meanScalePercent": 0.4543304302823719,
+        "psnr": 27.735978068727434
+      }
+    },
+    "camera": {
+      "position": [
+        -14.369802482670199,
+        6.708581129154325,
+        -10.641701144221829
+      ],
+      "target": [
+        0.43024464386079053,
+        0.11048857734184914,
+        -0.5592537224971377
+      ],
+      "up": [
+        0.30544859170913696,
+        0.9377496838569641,
+        0.1653076410293579
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.3934577184914207,
+        -0.6335559553730788,
+        -1.75
+      ],
+      [
+        1.3934577184914207,
+        0.6335559553730788,
+        1.75
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  },
+  {
+    "id": "container",
+    "name": "Container",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/container-gs3.bin.gz",
+        "count": 135680,
+        "material": "assets/primitives/container-gs3-material.png",
+        "materialSize": [
+          2048,
+          67
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/container-ours.bin.gz",
+        "count": 115723,
+        "material": "assets/primitives/container-ours-material.png",
+        "materialSize": [
+          2048,
+          905
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 185763,
+        "displayedCount": 135680,
+        "medianScale": 0.0017530809855088592,
+        "scaleQuartiles": [
+          0.0005520240811165422,
+          0.0017530809855088592,
+          0.0038608829490840435
+        ],
+        "medianScalePercent": 0.1404600269175343,
+        "meanScale": 0.003326206554888139,
+        "meanScalePercent": 0.26650169963326314,
+        "psnr": 36.84
+      },
+      "Ours": {
+        "count": 135342,
+        "displayedCount": 115723,
+        "medianScale": 0.003043148748511901,
+        "scaleQuartiles": [
+          0.002075911284793526,
+          0.003043148748511901,
+          0.004998665938291021
+        ],
+        "medianScalePercent": 0.2438225949989247,
+        "meanScale": 0.0047114930383178565,
+        "meanScalePercent": 0.377493364228014,
+        "psnr": 39.08386427307129
+      }
+    },
+    "camera": {
+      "position": [
+        8.53710080892503,
+        -7.311685700933824,
+        -14.685454916189045
+      ],
+      "target": [
+        0.0762825773143998,
+        -1.4737159761246676,
+        0.6048855860237179
+      ],
+      "up": [
+        -0.3784519135951996,
+        -0.9149824380874634,
+        0.13993319869041443
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.2356716249244113,
+        -1.7499999999999996,
+        -1.1848207476051773
+      ],
+      [
+        1.2356716249244113,
+        1.7500000000000004,
+        1.1848207476051777
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  },
+  {
+    "id": "translucent",
+    "name": "Translucent",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/translucent-gs3.bin.gz",
+        "count": 215553,
+        "material": "assets/primitives/translucent-gs3-material.png",
+        "materialSize": [
+          2048,
+          106
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/translucent-ours.bin.gz",
+        "count": 146905,
+        "material": "assets/primitives/translucent-ours-material.png",
+        "materialSize": [
+          2048,
+          1148
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 412921,
+        "displayedCount": 215553,
+        "medianScale": 0.005683356896042824,
+        "scaleQuartiles": [
+          0.003049142425879836,
+          0.005683356896042824,
+          0.009385915473103523
+        ],
+        "medianScalePercent": 0.3314388854079598,
+        "meanScale": 0.007013264433936697,
+        "meanScalePercent": 0.4089957026407638,
+        "psnr": 32.92
+      },
+      "Ours": {
+        "count": 214805,
+        "displayedCount": 146905,
+        "medianScale": 0.007197789950058048,
+        "scaleQuartiles": [
+          0.0051412149373244575,
+          0.007197789950058048,
+          0.010623098452634195
+        ],
+        "medianScalePercent": 0.4197567603239743,
+        "meanScale": 0.008944182816555863,
+        "meanScalePercent": 0.52160194016117,
+        "psnr": 33.94
+      }
+    },
+    "camera": {
+      "position": [
+        3.241862587714235,
+        5.746355061041749,
+        -4.664354674669346
+      ],
+      "target": [
+        -0.01866912661705955,
+        0.032679443255040574,
+        0.026825501609534008
+      ],
+      "up": [
+        -0.4035317897796631,
+        0.707064151763916,
+        0.580708384513855
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.75,
+        -0.8586866860059146,
+        -1.7497147758161338
+      ],
+      [
+        1.75,
+        0.8586866860059146,
+        1.7497147758161338
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  },
+  {
+    "id": "nefertiti",
+    "name": "Nefertiti",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/nefertiti-gs3.bin.gz",
+        "count": 74321,
+        "material": "assets/primitives/nefertiti-gs3-material.png",
+        "materialSize": [
+          2048,
+          37
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/nefertiti-ours.bin.gz",
+        "count": 67198,
+        "material": "assets/primitives/nefertiti-ours-material.png",
+        "materialSize": [
+          2048,
+          525
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 103303,
+        "displayedCount": 74321,
+        "meanScale": 0.005158005877734234,
+        "medianScale": 0.002849273952810276,
+        "scaleQuartiles": [
+          0.0011906552984722067,
+          0.002849273952810276,
+          0.005943581040191853
+        ],
+        "medianScalePercent": 0.17396627888761546,
+        "meanScalePercent": 0.31492903241011133,
+        "psnr": 36.69
+      },
+      "Ours": {
+        "count": 82407,
+        "displayedCount": 67198,
+        "meanScale": 0.0064879303595602004,
+        "medianScale": 0.004121095403821692,
+        "scaleQuartiles": [
+          0.0026836037840040168,
+          0.004121095403821692,
+          0.00735875060715157
+        ],
+        "medianScalePercent": 0.25161905952798813,
+        "meanScalePercent": 0.3961293722639216,
+        "psnr": 38.61
+      }
+    },
+    "camera": {
+      "position": [
+        -9.829730593619477,
+        -1.3236408884565487,
+        -5.921636071774992
+      ],
+      "target": [
+        0.05389408484827918,
+        -0.1760408010437433,
+        -0.05637315487896721
+      ],
+      "up": [
+        0.36119380593299866,
+        -0.8174324631690979,
+        -0.4487128257751465
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -0.9592876749917294,
+        -1.7499999999999998,
+        -1.374635747360895
+      ],
+      [
+        0.9592876749917294,
+        1.7499999999999998,
+        1.3746357473608957
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  },
+  {
+    "id": "pikachu",
+    "name": "Pikachu",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/pikachu-gs3.bin.gz",
+        "count": 68929,
+        "material": "assets/primitives/pikachu-gs3-material.png",
+        "materialSize": [
+          2048,
+          34
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/pikachu-ours.bin.gz",
+        "count": 74525,
+        "material": "assets/primitives/pikachu-ours-material.png",
+        "materialSize": [
+          2048,
+          583
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 116104,
+        "displayedCount": 68929,
+        "meanScale": 0.005661485144163386,
+        "medianScale": 0.0038920763075945036,
+        "scaleQuartiles": [
+          0.0024871540233529933,
+          0.0038920763075945036,
+          0.0062616610905693315
+        ],
+        "medianScalePercent": 0.22697596806036127,
+        "meanScalePercent": 0.3301633805967297,
+        "psnr": 32.94
+      },
+      "Ours": {
+        "count": 107902,
+        "displayedCount": 74525,
+        "meanScale": 0.005815870490447951,
+        "medianScale": 0.004167051391761907,
+        "scaleQuartiles": [
+          0.002822243775483754,
+          0.004167051391761907,
+          0.006642347784369151
+        ],
+        "medianScalePercent": 0.24301181396594937,
+        "meanScalePercent": 0.3391667404123883,
+        "psnr": 34.11
+      }
+    },
+    "camera": {
+      "position": [
+        1.7202934033287969,
+        5.400175885960435,
+        7.708444999852875
+      ],
+      "target": [
+        -0.08047475109200186,
+        -0.0911747009076942,
+        0.0846802968488225
+      ],
+      "up": [
+        -0.20935064554214478,
+        0.8162237405776978,
+        -0.5384711623191833
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.2934391024919873,
+        -1.190222969476663,
+        -1.75
+      ],
+      [
+        1.2934391024919873,
+        1.190222969476663,
+        1.75
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  },
+  {
+    "id": "materialballs",
+    "name": "MaterialBalls",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/materialballs-gs3.bin.gz",
+        "count": 174887,
+        "material": "assets/primitives/materialballs-gs3-material.png",
+        "materialSize": [
+          2048,
+          86
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/materialballs-ours.bin.gz",
+        "count": 97763,
+        "material": "assets/primitives/materialballs-ours-material.png",
+        "materialSize": [
+          2048,
+          764
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 272844,
+        "displayedCount": 174887,
+        "meanScale": 0.0049717347155895176,
+        "medianScale": 0.0023891612850657634,
+        "scaleQuartiles": [
+          0.0002623326264179805,
+          0.0023891612850657634,
+          0.006245272286962025
+        ],
+        "medianScalePercent": 0.13932979537734083,
+        "meanScalePercent": 0.2899388940058276,
+        "psnr": 30.44
+      },
+      "Ours": {
+        "count": 120734,
+        "displayedCount": 97763,
+        "meanScale": 0.01066530421860924,
+        "medianScale": 0.007846360514395856,
+        "scaleQuartiles": [
+          0.0056999206475438526,
+          0.007846360514395856,
+          0.01278866703618128
+        ],
+        "medianScalePercent": 0.457579742213816,
+        "meanScalePercent": 0.6219733526173442,
+        "psnr": 30.49
+      }
+    },
+    "camera": {
+      "position": [
+        3.6950831538558955,
+        5.924920712483271,
+        -5.234408246530104
+      ],
+      "target": [
+        0.18033536928855343,
+        -0.24648806556080594,
+        -0.1754004350273286
+      ],
+      "up": [
+        -0.4039771854877472,
+        0.7064587473869324,
+        0.5811353325843811
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.6992863367969664,
+        -0.7119443167808855,
+        -1.7499999999999998
+      ],
+      [
+        1.6992863367969664,
+        0.7119443167808855,
+        1.7499999999999998
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  },
+  {
+    "id": "drums",
+    "name": "Drums",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/drums-gs3.bin.gz",
+        "count": 244008,
+        "material": "assets/primitives/drums-gs3-material.png",
+        "materialSize": [
+          2048,
+          120
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/drums-ours.bin.gz",
+        "count": 233682,
+        "material": "assets/primitives/drums-ours-material.png",
+        "materialSize": [
+          2048,
+          1826
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 549696,
+        "displayedCount": 244008,
+        "meanScale": 0.00730404294495529,
+        "medianScale": 0.0060009094290874206,
+        "scaleQuartiles": [
+          0.0035935514399106283,
+          0.0060009094290874206,
+          0.009159941659121923
+        ],
+        "medianScalePercent": 0.3499577395879705,
+        "meanScalePercent": 0.42595316411211576,
+        "psnr": 30.92
+      },
+      "Ours": {
+        "count": 454596,
+        "displayedCount": 233682,
+        "meanScale": 0.008466442461942317,
+        "medianScale": 0.006916724650967055,
+        "scaleQuartiles": [
+          0.0052102452161387255,
+          0.006916724650967055,
+          0.009632026290790319
+        ],
+        "medianScalePercent": 0.4033657486100284,
+        "meanScalePercent": 0.4937413405993571,
+        "psnr": 32.18
+      }
+    },
+    "camera": {
+      "position": [
+        -6.100037274569597,
+        0.5339398654494756,
+        5.812477359106068
+      ],
+      "target": [
+        -0.172563279815936,
+        -0.15210405516384728,
+        -0.1539477202513826
+      ],
+      "up": [
+        0.702382504940033,
+        -0.08128402382135391,
+        0.7071434855461121
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.75,
+        -1.315750936037427,
+        -1.1083222457281159
+      ],
+      [
+        1.75,
+        1.315750936037427,
+        1.1083222457281159
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  },
+  {
+    "id": "hotdog",
+    "name": "Hotdog",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/hotdog-gs3.bin.gz",
+        "count": 185840,
+        "material": "assets/primitives/hotdog-gs3-material.png",
+        "materialSize": [
+          2048,
+          91
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/hotdog-ours.bin.gz",
+        "count": 129054,
+        "material": "assets/primitives/hotdog-ours-material.png",
+        "materialSize": [
+          2048,
+          1009
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 300700,
+        "displayedCount": 185840,
+        "meanScale": 0.006437242808402387,
+        "medianScale": 0.004973102962777728,
+        "scaleQuartiles": [
+          0.00271325834180428,
+          0.004973102962777728,
+          0.008377420420459697
+        ],
+        "medianScalePercent": 0.2900186866937264,
+        "meanScalePercent": 0.3754035899105386,
+        "psnr": 33.38
+      },
+      "Ours": {
+        "count": 191735,
+        "displayedCount": 129054,
+        "meanScale": 0.009146624889098114,
+        "medianScale": 0.0075047915958293175,
+        "scaleQuartiles": [
+          0.005481807454135378,
+          0.0075047915958293175,
+          0.010963931219377637
+        ],
+        "medianScalePercent": 0.43766031365592967,
+        "meanScalePercent": 0.533407845739579,
+        "psnr": 34.3
+      }
+    },
+    "camera": {
+      "position": [
+        -5.6574772692954625,
+        0.7860783847817239,
+        5.600804640699705
+      ],
+      "target": [
+        -0.03886563166466317,
+        0.1360581215070632,
+        -0.054255804594407486
+      ],
+      "up": [
+        0.7023748755455017,
+        -0.08111006766557693,
+        0.7071710228919983
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.7461698708463702,
+        -1.75,
+        -0.34757680620582043
+      ],
+      [
+        1.7461698708463702,
+        1.75,
+        0.34757680620582043
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  },
+  {
+    "id": "cup",
+    "name": "Cup",
+    "models": {
+      "GS3": {
+        "src": "assets/primitives/cup-gs3.bin.gz",
+        "count": 95037,
+        "material": "assets/primitives/cup-gs3-material.png",
+        "materialSize": [
+          2048,
+          47
+        ]
+      },
+      "Ours": {
+        "src": "assets/primitives/cup-ours.bin.gz",
+        "count": 73307,
+        "material": "assets/primitives/cup-ours-material.png",
+        "materialSize": [
+          2048,
+          573
+        ]
+      }
+    },
+    "stats": {
+      "GS3": {
+        "count": 123541,
+        "displayedCount": 95037,
+        "meanScale": 0.005477667365481316,
+        "medianScale": 0.003289183638930654,
+        "scaleQuartiles": [
+          0.0004703399733741486,
+          0.003289183638930654,
+          0.00685617579270411
+        ],
+        "medianScalePercent": 0.19181680459805825,
+        "meanScalePercent": 0.31944359635671965,
+        "psnr": 35.72
+      },
+      "Ours": {
+        "count": 87970,
+        "displayedCount": 73307,
+        "meanScale": 0.010007913362707361,
+        "medianScale": 0.007173985743377052,
+        "scaleQuartiles": [
+          0.005145118974447702,
+          0.007173985743377052,
+          0.010634645761394175
+        ],
+        "medianScalePercent": 0.4183685596751881,
+        "meanScalePercent": 0.5836359938093463,
+        "psnr": 35.97
+      }
+    },
+    "camera": {
+      "position": [
+        4.644177548626688,
+        8.31165983138055,
+        -6.9237992467524245
+      ],
+      "target": [
+        -0.10380687577029946,
+        -0.01679134312597519,
+        -0.09262518032215183
+      ],
+      "up": [
+        -0.403396338224411,
+        0.7067115306854248,
+        0.5812315940856934
+      ]
+    },
+    "resolution": 4,
+    "sigma": 3.0,
+    "bounds": [
+      [
+        -1.7331569984025856,
+        -1.0381231681019698,
+        -1.7499999999999998
+      ],
+      [
+        1.7331569984025856,
+        1.0381231681019698,
+        1.7499999999999998
+      ]
+    ],
+    "closeDefault": false,
+    "detail": {
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 3.0
+    }
+  }
+]

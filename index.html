@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      name="description"
+      content="LoFT-GS: Factorized Local Transport for Relightable Gaussian Splatting."
+    />
+    <title>
+      LoFT-GS: Factorized Local Transport for Relightable Gaussian Splatting
+    </title>
+    <link rel="icon" href="data:," />
+    <script type="module" crossorigin src="./assets/index-DcH01uF_.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-bR5orLl6.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#comparisons">Skip to comparisons</a>
+    <header class="paper-header">
+      <h1>
+        <strong>LoFT-GS</strong>: Factorized Local Transport<br />for
+        Relightable Gaussian Splatting
+      </h1>
+      <p class="authors">Anonymous Authors</p>
+      <div class="resource-links">
+        <a
+          href="./assets/paper/LoFT-GS.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i data-lucide="file-text"></i> Paper</a
+        >
+        <a href="https://github.com/Ooosn/RTS" target="_blank" rel="noopener noreferrer"
+          ><i data-lucide="code-2"></i> Code</a
+        >
+        <a href="./assets/supplement.zip" download
+          ><i data-lucide="film"></i> Supplementary</a
+        >
+      </div>
+    </header>
+    <main>
+      <section class="overview-section" aria-label="Overview video">
+        <video
+          id="overview"
+          controls
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          src="./assets/videos/LoFT_GS_comparison_clean_1080p.mp4"
+          poster="./assets/videos/LoFT_GS_comparison_clean_1080p.png"
+        ></video>
+      </section>
+      <section class="paper-text">
+        <h2>Abstract</h2>
+        <p>
+          Relightable Gaussian splatting combines explicit reconstruction with
+          fast rendering under novel views and illumination. However, a single
+          visibility value per Gaussian cannot preserve the spatial distribution
+          of occlusion within its footprint. When a cast-shadow boundary crosses
+          a Gaussian, illuminated and occluded regions are collapsed into a
+          shared shadow response. We introduce LoFT-GS, a locally factorized
+          relighting representation that addresses this limitation by recording
+          visibility on a local texture grid within each 2D Gaussian during
+          light-space splatting. A range-conditioned shadow formulation combines
+          this local visibility with a Gaussian-level range predictor. More
+          generally, LoFT-GS separates spatially varying relighting factors from
+          shared Gaussian-level computation. Local texels represent visibility
+          and diffuse appearance and modulate specular amplitude and sharpness,
+          while geometry, base directional responses, and neural predictions
+          remain shared per Gaussian. Experiments across diverse scenes
+          demonstrate improved relighting fidelity over the evaluated baselines.
+        </p>
+      </section>
+      <section class="pipeline">
+        <h2>Method Overview</h2>
+        <a
+          href="./assets/pipeline.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open full-resolution method diagram"
+          ><img
+            src="./assets/pipeline.png"
+            width="2300"
+            height="597"
+            loading="lazy"
+            alt="LoFT-GS pipeline: Gaussian-level predictions combined with local visibility, diffuse appearance and specular factors."
+        /></a>
+      </section>
+      <section id="comparisons" class="results-section">
+        <h2>Relighting Comparisons</h2>
+        <div
+          id="video-scenes"
+          class="scene-tabs"
+          role="tablist"
+          aria-label="Video scene"
+        ></div>
+        <div id="video-comparison" class="comparison"></div>
+      </section>
+      <section
+        id="representation"
+        class="results-section representation-section"
+      >
+        <h2>From Gaussians to Local Texels</h2>
+        <div
+          id="structure-scenes"
+          class="scene-tabs"
+          role="tablist"
+          aria-label="Representation scene"
+        ></div>
+        <div id="structure-comparison" class="comparison"></div>
+        <div id="statistics-content" class="structure-statistics" aria-label="Selected scene statistics"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <span>LoFT-GS</span><a href="./assets/paper/LoFT-GS.pdf">Paper</a>
+    </footer>
+    <div id="page-error" role="alert" hidden></div>
+  </body>
+</html>

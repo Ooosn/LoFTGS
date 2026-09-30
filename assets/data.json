@@ -1,0 +1,157 @@
+{
+  "videos": [
+    {
+      "id": "fish",
+      "name": "Fish",
+      "family": "NRHints",
+      "src": "assets/videos/NRHints_Fish_clean_1080p.mp4",
+      "poster": "assets/videos/NRHints_Fish_clean_1080p.png",
+      "duration": 16.666667
+    },
+    {
+      "id": "pikachu",
+      "name": "Pikachu",
+      "family": "NRHints",
+      "src": "assets/videos/NRHints_Pikachu_clean_1080p.mp4",
+      "poster": "assets/videos/NRHints_Pikachu_clean_1080p.png",
+      "duration": 16.666667
+    },
+    {
+      "id": "anisometal",
+      "name": "AnisoMetal",
+      "family": "Synthetic",
+      "src": "assets/videos/Synthetic_AnisoMetal_clean_1080p.mp4",
+      "poster": "assets/videos/Synthetic_AnisoMetal_clean_1080p.png",
+      "duration": 16.666667
+    },
+    {
+      "id": "drums",
+      "name": "Drums",
+      "family": "Synthetic",
+      "src": "assets/videos/Synthetic_Drums_clean_1080p.mp4",
+      "poster": "assets/videos/Synthetic_Drums_clean_1080p.png",
+      "duration": 16.666667
+    },
+    {
+      "id": "furball",
+      "name": "FurBall",
+      "family": "Synthetic",
+      "src": "assets/videos/Synthetic_FurBall_clean_1080p.mp4",
+      "poster": "assets/videos/Synthetic_FurBall_clean_1080p.png",
+      "duration": 16.666667
+    },
+    {
+      "id": "hotdog",
+      "name": "Hotdog",
+      "family": "Synthetic",
+      "src": "assets/videos/Synthetic_Hotdog_clean_1080p.mp4",
+      "poster": "assets/videos/Synthetic_Hotdog_clean_1080p.png",
+      "duration": 16.666667
+    },
+    {
+      "id": "container",
+      "name": "Container",
+      "family": "LightStage",
+      "src": "assets/videos/LightStage_Container_valid.mp4",
+      "poster": "assets/videos/LightStage_Container_valid.png",
+      "duration": 16.666666666666668,
+      "frameSize": [
+        1536,
+        640
+      ],
+      "panels": {
+        "RNG": [
+          0,
+          64,
+          512,
+          512
+        ],
+        "GS3": [
+          512,
+          64,
+          512,
+          512
+        ],
+        "Ours": [
+          1024,
+          64,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "id": "fox",
+      "name": "Fox",
+      "family": "LightStage",
+      "src": "assets/videos/LightStage_Fox_valid.mp4",
+      "poster": "assets/videos/LightStage_Fox_valid.png",
+      "duration": 16.666666666666668,
+      "frameSize": [
+        1536,
+        640
+      ],
+      "panels": {
+        "RNG": [
+          0,
+          64,
+          512,
+          512
+        ],
+        "GS3": [
+          512,
+          64,
+          512,
+          512
+        ],
+        "Ours": [
+          1024,
+          64,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "id": "cupfabric",
+      "name": "CupFabric",
+      "family": "NRHints",
+      "src": "assets/videos/NRHints_CupFabric_valid.mp4",
+      "poster": "assets/videos/NRHints_CupFabric_valid.png",
+      "duration": 16.666666666666668,
+      "frameSize": [
+        1536,
+        640
+      ],
+      "panels": {
+        "RNG": [
+          0,
+          64,
+          512,
+          512
+        ],
+        "GS3": [
+          512,
+          64,
+          512,
+          512
+        ],
+        "Ours": [
+          1024,
+          64,
+          512,
+          512
+        ]
+      }
+    }
+  ],
+  "comparisonVideo": {
+    "src": "assets/videos/LoFT_GS_comparison_clean_1080p.mp4",
+    "poster": "assets/videos/LoFT_GS_comparison_clean_1080p.png"
+  },
+  "resources": {
+    "paper": "assets/paper/LoFT-GS.pdf",
+    "code": "https://github.com/Ooosn/RTS",
+    "supplement": "assets/supplement.zip"
+  }
+}
