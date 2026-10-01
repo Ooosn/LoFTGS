@@ -146,8 +146,8 @@
     }
   ],
   "comparisonVideo": {
-    "src": "assets/videos/LoFT_GS_comparison_full_overview_1080p.mp4",
-    "poster": "assets/videos/LoFT_GS_comparison_clean_1080p.png"
+    "src": "assets/videos/LoFT_GS_comparison_full_overview_v2_1080p.mp4",
+    "poster": "assets/videos/LoFT_GS_comparison_full_overview_v2_1080p.png"
   },
   "resources": {
     "paper": "assets/paper/LoFT-GS.pdf",
