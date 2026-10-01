@@ -2,7 +2,7 @@
 
 Factorized Local Transport for Relightable Gaussian Splatting.
 
-[Project page](https://ooosn.github.io/RTS/) | [Paper](https://ooosn.github.io/RTS/assets/paper/LoFT-GS.pdf)
+[Project page](https://ooosn.github.io/LoFTGS/) | [Paper](https://ooosn.github.io/LoFTGS/assets/paper/LoFT-GS.pdf)
 
 ## Install
 
