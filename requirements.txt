@@ -10,14 +10,8 @@ rich
 lpips
 jaxtyping
 tensorboard==2.16.2
-gsplat==1.1.1
 
 -e submodules/simple-knn
--e submodules/diff-gaussian-rasterization
--e submodules/diff-gaussian-rasterization_light
--e submodules/diff-gaussian-rasterization_hgs
--e submodules/v_3dgs
--e submodules/v_3dgs_ortho
 -e submodules/surfel-texture
 -e submodules/surfel-texture-deferred
 -e submodules/diff-surfel-rasterization-shadow

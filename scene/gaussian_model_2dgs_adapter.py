@@ -1,6 +1,7 @@
 import torch
 from scene.gaussian_model_native_2dgs import GaussianModel as _TextureGaussianModel2DGS
 from utils.shadow_transport import shadow_sensitivity_anchor
+from utils.native_backend import validate_native_backend
 
 
 class _NativeTextureAdapter(_TextureGaussianModel2DGS):
@@ -115,4 +116,5 @@ class GaussianModel2DGSAdapter:
     """Use the packaged native core, with or without local textures."""
 
     def __new__(cls, modelset, opt=None):
+        validate_native_backend(modelset)
         return _NativeTextureAdapter(modelset, opt)

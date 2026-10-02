@@ -75,7 +75,7 @@ class ModelParams(ParamGroup):
     def __init__(self, parser, sentinel=False):
 
         # 渲染器
-        self.rasterizer = "gsplat"
+        self.rasterizer = "2dgs"
 
         # 源路径
         self.sh_degree = 0

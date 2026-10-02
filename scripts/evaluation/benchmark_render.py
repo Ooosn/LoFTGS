@@ -16,24 +16,18 @@ import time
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXTENSION_NAMES = (
-    "diff_gaussian_rasterization",
-    "diff_gaussian_rasterization_light",
-    "diff_gaussian_rasterization_hgs",
-    "v_3dgs",
-    "v_3dgs_ortho",
-    "diff_surfel_rasterization_shadow",
-    "surfel_texture",
-    "surfel_texture_deferred",
-    "simple_knn",
-)
+EXTENSION_PACKAGES = {
+    "diff-surfel-rasterization-shadow": "diff_surfel_rasterization_shadow",
+    "surfel-texture": "surfel_texture",
+    "surfel-texture-deferred": "surfel_texture_deferred",
+    "simple-knn": "simple_knn",
+}
+EXTENSION_NAMES = tuple(EXTENSION_PACKAGES.values())
 CUDA_MODULE_PREFIXES = (
-    "diff_gaussian_rasterization",
     "diff_surfel_rasterization",
     "surfel_texture",
     "simple_knn",
     "tinycudann",
-    "gsplat_cuda",
 )
 
 
@@ -70,7 +64,7 @@ def _configure_imports(native_root: Path):
     if not native_root.is_dir():
         raise RuntimeError(f"Native extension root is missing: {native_root}")
     paths = [REPO_ROOT]
-    paths.extend(native_root / "submodules" / name for name in EXTENSION_NAMES)
+    paths.extend(native_root / "submodules" / name for name in EXTENSION_PACKAGES)
     for path in reversed(paths):
         if path.is_dir() and str(path) not in sys.path:
             sys.path.insert(0, str(path))

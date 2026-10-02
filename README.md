@@ -27,6 +27,14 @@ In training, if `tinycudann` is not installed, add
 Without this switch, missing `tinycudann` raises an error. Speed tests require
 `tinycudann` for reproducibility.
 
+The release builds only four local CUDA extensions: `simple-knn`,
+`surfel-texture`, `surfel-texture-deferred`, and
+`diff-surfel-rasterization-shadow`. The shared GLM headers in
+`submodules/third_party` are required by these builds.
+Legacy HGS, 3DGS/gsplat renderers, and lifted 3DGS shadows are not included.
+Their checkpoints require their original source revision. Native 2DGS,
+untextured initialization, and the textured LoFT-GS path remain supported.
+
 The default is 1-anchor (`no_shadow`). U-anchor can also work well on some scenes;
 to use it, change `--texture_shadow_sensitivity_anchor no_shadow` to
 `--texture_shadow_sensitivity_anchor visibility` in `train.sh`.

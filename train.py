@@ -23,7 +23,7 @@ from random import randint
 from utils.loss_utils import l1_loss, ssim
 from gaussian_renderer import render, get_shadow_backward_stage
 import sys
-from scene import Scene, GaussianModel
+from scene import Scene
 from scene.gaussian_model_2dgs_adapter import GaussianModel2DGSAdapter
 from utils.general_utils import safe_state, build_scaling_rotation
 from utils.graphics_utils import getWorld2View2_cu
@@ -772,10 +772,7 @@ def training(modelset, opt, pipe, testing_iterations, saving_iterations, checkpo
     tb_writer = prepare_output_and_logger(modelset)
 
     # 初始化高斯实例
-    if str(getattr(modelset, "rasterizer", "")).startswith("2dgs"):
-        gaussians = GaussianModel2DGSAdapter(modelset, opt)
-    else:
-        gaussians = GaussianModel(modelset, opt)
+    gaussians = GaussianModel2DGSAdapter(modelset, opt)
 
     # 根据 训练args，优化args 以及 初始高斯 建立场景实例，最终的高斯实例
     """

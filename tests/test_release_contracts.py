@@ -15,6 +15,7 @@ import torch
 
 from arguments import ModelParams, OptimizationParams, PipelineParams, explicit_cli_value
 from utils.shadow_transport import checkpoint_shadow_anchor, shadow_sensitivity_anchor
+from utils.native_backend import validate_native_backend
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -231,7 +232,8 @@ class RenderContractTests(unittest.TestCase):
             self.run_render(missing_checkpoint=True)
 
     def test_no_texture_dispatch_has_no_legacy_directory_dependency(self):
-        namespace = {"_NativeTextureAdapter": lambda *args: "native"}
+        namespace = {"_NativeTextureAdapter": lambda *args: "native",
+                     "validate_native_backend": validate_native_backend}
         source_functions("scene/gaussian_model_2dgs_adapter.py", ["__new__"], namespace,
                          class_name="GaussianModel2DGSAdapter")
         for textures in (False, True):

@@ -26,17 +26,13 @@ from tqdm import tqdm
 from os import makedirs
 from gaussian_renderer import render
 from gaussian_renderer.inference import TextureInferenceState
-from gaussian_renderer.shadow_render import shadow_render
 import torchvision
 from utils.general_utils import safe_state
 from utils.graphics_utils import focal2fov
 from argparse import ArgumentParser
 from arguments import ModelParams, PipelineParams, OptimizationParams, get_combined_args
 from arguments import explicit_cli_value as _explicit_cli_value
-from gaussian_renderer import GaussianModel
 from scene.gaussian_model_2dgs_adapter import GaussianModel2DGSAdapter
-from scene.neural_phase_function import Neural_phase
-from scene.mixture_ASG import Mixture_of_ASG
 from utils.system_utils import searchForMaxIteration
 from utils.shadow_transport import shadow_sensitivity_anchor
 from rich import print
@@ -58,9 +54,7 @@ def _is_2dgs_model(modelset):
     return str(getattr(modelset, "rasterizer", "")).startswith("2dgs")
 
 def _make_gaussian_model(modelset, opt=None):
-    if _is_2dgs_model(modelset):
-        return GaussianModel2DGSAdapter(modelset, opt)
-    return GaussianModel(modelset)
+    return GaussianModel2DGSAdapter(modelset, opt)
 
 def _unpack_training_checkpoint(checkpoint):
     if not isinstance(checkpoint, (tuple, list)):
@@ -218,6 +212,8 @@ def render_sets(modelset : ModelParams,
                 shadow_anchor_override=None):
     if fast_inference and shadowmap_render:
         raise ValueError("--fast_inference supports native RGB/component rendering only")
+    if shadowmap_render:
+        raise ValueError("--shadowmap_render is a retired 3DGS path; use native LoFT-GS rendering.")
     if gamma and not hdr:
         raise ValueError("--gamma requires --hdr; omit both for LDR/NRHints scenes")
     if skip_train and skip_test and not valid:
@@ -280,51 +276,32 @@ def render_sets(modelset : ModelParams,
         point_cloud 中存储了高斯模型参数，chkpnt 中存储了优化器状态以及神经网络参数和一些共用的参数
         """
         if modelset.use_nerual_phasefunc:
-            if _is_2dgs_model(modelset):
-                if opt is None:
-                    raise RuntimeError("2DGS checkpoint rendering requires OptimizationParams for restore().")
-                gaussians.restore(model_params, opt, load_optimizer=False)
-                gaussians.training_setup(opt)
-                if scene_state is not None and not (force_input_camera or using_baked_optimized_pose):
-                    scene.restore(scene_state)
-                if bool(getattr(modelset, "use_textures", False)):
-                    if hasattr(gaussians, "texture_effect_mode"):
-                        gaussians.texture_effect_mode = str(getattr(modelset, "texture_effect_mode", gaussians.texture_effect_mode))
-                    if hasattr(gaussians, "mbrdf_normal_source"):
-                        gaussians.mbrdf_normal_source = str(getattr(modelset, "mbrdf_normal_source", gaussians.mbrdf_normal_source)).lower()
-                    texture_model_overrides = {
-                        "texture_shadow_confidence_enabled": bool,
-                        "texture_shadow_confidence_start_iter": int,
-                        "texture_shadow_confidence_strength": float,
-                        "texture_shadow_confidence_gamma": float,
-                        "texture_shadow_confidence_zero_dc": bool,
-                        "texture_shadow_transport_mode": lambda value: str(value).lower(),
-                        "texture_shadow_transport_eps": float,
-                        "texture_factor_surgery": lambda value: str(value).lower(),
-                        "texture_factor_surgery_seed": int,
-                    }
-                    for name, caster in texture_model_overrides.items():
-                        if hasattr(gaussians, name):
-                            setattr(gaussians, name, caster(getattr(modelset, name, getattr(gaussians, name))))
-                if getattr(gaussians, "neural_phasefunc", None) is not None:
-                    gaussians.neural_phasefunc.eval()
-            else:
-                gaussians.asg_func = Mixture_of_ASG(modelset.basis_asg_num, modelset.asg_channel_num)
-                gaussians.neural_phasefunc = Neural_phase(hidden_feature_size=modelset.phasefunc_hidden_size, \
-                                            hidden_feature_layers=modelset.phasefunc_hidden_layers, \
-                                            frequency=modelset.phasefunc_frequency, \
-                                            neural_material_size=modelset.neural_material_size, \
-                                            asg_mlp = gaussians.asg_mlp).to(device="cuda")
-                if isinstance(model_params, dict):
-                    gaussians.asg_func.asg_sigma = model_params["asg_sigma"]
-                    gaussians.asg_func.asg_rotation = model_params["asg_rotation"]
-                    gaussians.asg_func.asg_scales = model_params["asg_scales"]
-                    gaussians.neural_phasefunc.load_state_dict(model_params["neural_phasefunc"])
-                else:
-                    gaussians.asg_func.asg_sigma = model_params[8]
-                    gaussians.asg_func.asg_rotation = model_params[9]
-                    gaussians.asg_func.asg_scales = model_params[10]
-                    gaussians.neural_phasefunc.load_state_dict(model_params[14])
+            if opt is None:
+                raise RuntimeError("2DGS checkpoint rendering requires OptimizationParams for restore().")
+            gaussians.restore(model_params, opt, load_optimizer=False)
+            gaussians.training_setup(opt)
+            if scene_state is not None and not (force_input_camera or using_baked_optimized_pose):
+                scene.restore(scene_state)
+            if bool(getattr(modelset, "use_textures", False)):
+                if hasattr(gaussians, "texture_effect_mode"):
+                    gaussians.texture_effect_mode = str(getattr(modelset, "texture_effect_mode", gaussians.texture_effect_mode))
+                if hasattr(gaussians, "mbrdf_normal_source"):
+                    gaussians.mbrdf_normal_source = str(getattr(modelset, "mbrdf_normal_source", gaussians.mbrdf_normal_source)).lower()
+                texture_model_overrides = {
+                    "texture_shadow_confidence_enabled": bool,
+                    "texture_shadow_confidence_start_iter": int,
+                    "texture_shadow_confidence_strength": float,
+                    "texture_shadow_confidence_gamma": float,
+                    "texture_shadow_confidence_zero_dc": bool,
+                    "texture_shadow_transport_mode": lambda value: str(value).lower(),
+                    "texture_shadow_transport_eps": float,
+                    "texture_factor_surgery": lambda value: str(value).lower(),
+                    "texture_factor_surgery_seed": int,
+                }
+                for name, caster in texture_model_overrides.items():
+                    if hasattr(gaussians, name):
+                        setattr(gaussians, name, caster(getattr(modelset, name, getattr(gaussians, name))))
+            if getattr(gaussians, "neural_phasefunc", None) is not None:
                 gaussians.neural_phasefunc.eval()
             del model_params, first_iter, scene_state
             if hasattr(gaussians, "optimizer"):
