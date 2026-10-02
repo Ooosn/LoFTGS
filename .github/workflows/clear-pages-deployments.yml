@@ -1,0 +1,78 @@
+name: Clear Pages deployment records
+
+on:
+  workflow_run:
+    workflows: [pages build and deployment, pages-build-deployment]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: clear-pages-deployments
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    if: github.repository == 'Ooosn/LoFTGS'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const { createHash } = require('node:crypto');
+            const repository = context.repo;
+            if (context.eventName === 'workflow_run' && context.payload.workflow_run.head_branch !== 'gh-pages') return;
+
+            const list = () => github.paginate(github.rest.repos.listDeployments, {
+              ...repository, per_page: 100
+            });
+            const branch = async () => (await github.rest.repos.getBranch({
+              ...repository, branch: 'gh-pages'
+            })).data.commit.sha;
+            const websiteHash = async () => {
+              const response = await fetch('https://ooosn.github.io/LoFTGS/', { redirect: 'error', cache: 'no-store' });
+              if (response.status !== 200) throw new Error('The website is not available; no cleanup can be verified.');
+              return createHash('sha256').update(Buffer.from(await response.arrayBuffer())).digest('hex');
+            };
+
+            const deployments = await list();
+            if (!deployments.length) return;
+            if (deployments.some(item => item.environment !== 'github-pages' || item.ref !== 'gh-pages')) {
+              throw new Error('Other deployment environments exist; leaving all records unchanged.');
+            }
+            for (const item of deployments) {
+              const { data: statuses } = await github.rest.repos.listDeploymentStatuses({
+                ...repository, deployment_id: item.id, per_page: 1
+              });
+              if (!['success', 'inactive', 'failure', 'error'].includes(statuses[0]?.state)) {
+                core.notice('A deployment is still running. Cleanup will follow its completion.');
+                return;
+              }
+            }
+
+            const head = await branch();
+            const before = await websiteHash();
+            const remaining = new Set(deployments.map(item => item.id));
+            core.info(JSON.stringify(deployments.map(({ id, sha, environment }) => ({ id, sha, environment }))));
+            for (const item of deployments.sort((a, b) => a.id - b.id)) {
+              const live = await list();
+              if (await branch() !== head || live.length !== remaining.size || live.some(entry => !remaining.has(entry.id))) {
+                core.notice('The publishing state changed. Leaving newer records for the next cleanup.');
+                return;
+              }
+              if (live.length > 1) {
+                await github.rest.repos.createDeploymentStatus({
+                  ...repository, deployment_id: item.id, state: 'inactive', auto_inactive: false
+                });
+              }
+              // The sole remaining record can be deleted without changing its status.
+              await github.rest.repos.deleteDeployment({ ...repository, deployment_id: item.id });
+              remaining.delete(item.id);
+            }
+            if ((await list()).length) throw new Error('New deployment records appeared during cleanup.');
+            if (await websiteHash() !== before) throw new Error('The website changed during cleanup.');
+            core.info(`Cleared ${deployments.length} deployment records; the website is unchanged.`);
